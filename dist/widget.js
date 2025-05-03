@@ -1,3 +1,20 @@
+console.log("✅ Widget script loaded!");
+
+const widgetBanner = document.createElement("div");
+widgetBanner.innerText = "🚀 Protega Widget Active!";
+widgetBanner.style.position = "fixed";
+widgetBanner.style.bottom = "10px";
+widgetBanner.style.right = "10px";
+widgetBanner.style.backgroundColor = "#000";
+widgetBanner.style.color = "#fff";
+widgetBanner.style.padding = "10px 15px";
+widgetBanner.style.borderRadius = "8px";
+widgetBanner.style.zIndex = "9999";
+widgetBanner.style.boxShadow = "0 0 10px rgba(0,0,0,0.3)";
+
+document.body.appendChild(widgetBanner);
+
+
 (function(){"use strict";function yg(f){return f&&f.__esModule&&Object.prototype.hasOwnProperty.call(f,"default")?f.default:f}function Ix(f){if(Object.prototype.hasOwnProperty.call(f,"__esModule"))return f;var l=f.default;if(typeof l=="function"){var u=function c(){return this instanceof c?Reflect.construct(l,arguments,this.constructor):l.apply(this,arguments)};u.prototype=l.prototype}else u={};return Object.defineProperty(u,"__esModule",{value:!0}),Object.keys(f).forEach(function(c){var p=Object.getOwnPropertyDescriptor(f,c);Object.defineProperty(u,c,p.get?p:{enumerable:!0,get:function(){return f[c]}})}),u}var rv={exports:{}},Fd={},av={exports:{}},xt={};/**
  * @license React
  * react.production.min.js
