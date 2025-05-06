@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animation for detecting autofill */
+@keyframes onAutoFillStart {
+  from {/**/}
+  to {/**/}
+}
+
+@keyframes onAutoFillCancel {
+  from {/**/}
+  to {/**/}
+}
+
+/* Apply the animation only to autofilled inputs */
+input:-webkit-autofill {
+  animation-name: onAutoFillStart;
+  transition: background-color 50000s ease-in-out 0s;
+}
+
+input:not(:-webkit-autofill) {
+  animation-name: onAutoFillCancel;
+}
+
+/* Override browser autofill styles to maintain dark theme */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #111827 inset !important;
+  -webkit-text-fill-color: #e5e7eb !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Custom styles for price range slider */
+.range-thumb-left::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #6366f1;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  z-index: 3;
+  position: relative;
+}
+
+.range-thumb-right::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #6366f1;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  z-index: 3;
+  position: relative;
+}
+
+.range-thumb-left::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #6366f1;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  z-index: 3;
+  position: relative;
+}
+
+.range-thumb-right::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #6366f1;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  z-index: 3;
+  position: relative;
+}
+
+/* Make range inputs transparent */
+.range-thumb-left,
+.range-thumb-right {
+  -webkit-appearance: none;
+  pointer-events: auto;
+  background: transparent;
+}
+
+/* Hide default track for webkit browsers */
+.range-thumb-left::-webkit-slider-runnable-track,
+.range-thumb-right::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  height: 0;
+}
+
+.range-thumb-left::-moz-range-track,
+.range-thumb-right::-moz-range-track {
+  background: transparent;
+}
+
+/* Add hover effect */
+.range-thumb-left:hover::-webkit-slider-thumb,
+.range-thumb-right:hover::-webkit-slider-thumb,
+.range-thumb-left:hover::-moz-range-thumb,
+.range-thumb-right:hover::-moz-range-thumb {
+  background: #f9fafb;
+  border-color: #4f46e5;
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}
+
+/* Add focus styles */
+.range-thumb-left:focus::-webkit-slider-thumb,
+.range-thumb-right:focus::-webkit-slider-thumb,
+.range-thumb-left:focus::-moz-range-thumb,
+.range-thumb-right:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+  outline: none;
+}
+
+
+#pdp-widget-root.highlight {
+  animation: pulse 1s ease-out;
+}
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 rgba(255, 99, 71, 0.7); }
+  50%  { box-shadow: 0 0 15px rgba(255, 99, 71, 0.7); }
+  100% { box-shadow: 0 0 0 rgba(255, 99, 71, 0); }
+}
